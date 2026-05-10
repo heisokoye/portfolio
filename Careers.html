@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Ensures the website scales correctly on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Careers | DIS Innovation LTD</title>
+  
+  <!-- Pulling in Tailwind CSS for rapid styling without writing custom CSS classes -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- We're loading Material Icons for classic Google-style icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <!-- Lucide is loaded here for sleek, modern outline icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- This pulls in Apple's San Francisco Pro font for that premium iOS/macOS look -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sahibjotsaggu/San-Francisco-Pro-Fonts@master/fonts.css" />
+  
+  <style>
+    /* Applying the SF Pro font to everything on the page */
+    *{ font-family: "SF Pro Display", sans-serif; }
+    
+    /* Gives a smooth gliding effect when clicking anchor links that jump down the page */
+    html{ scroll-behavior:smooth; }
+    
+    /* Prevents annoying horizontal scrolling if an element accidentally pushes past the screen width */
+    body{ overflow-x:hidden; }
+  </style>
+</head>
+
+<!-- We start with a very dark background (neutral-950) and white text for a slick dark-mode feel. -->
+<body class="bg-neutral-950 text-white antialiased">
+
+  <!-- 
+    ======================================
+    THE NAVIGATION BAR 
+    ======================================
+    We make it stick to the top ('fixed top-0'), add a dark transparent background ('bg-neutral-950/90'), 
+    and a nice frosted glass effect ('backdrop-blur-xl') so content beautifully blurs as it scrolls underneath.
+  -->
+  <nav class="fixed top-0 left-0 w-full z-50 border-b border-neutral-900 bg-neutral-950/90 backdrop-blur-xl">
+    <div class="mx-auto h-20 px-4 flex items-center justify-between">
+      
+      <!-- Brand Logo & Name: Clicking this always takes you back home -->
+      <a href="Main.html" class="flex items-center gap-3 cursor-pointer">
+        <img src="/imgs/image.png" alt="DIS Logo" class="w-8 h-8 object-contain">
+        <h2 class="text-sm md:text-base tracking-tight font-medium">DIS Innovation</h2>
+      </a>
+      
+      <!-- 
+        Desktop Navigation Links 
+        These are hidden on small mobile screens ('hidden') and only show up on larger screens ('lg:flex'). 
+      -->
+      <div class="hidden lg:flex items-center gap-8 text-sm text-neutral-500">
+        <a href="Main.html" class="hover:text-white transition">Home</a>
+        <a href="About.html" class="hover:text-white transition">About</a>
+        <a href="Services.html" class="hover:text-white transition">Services</a>
+        <a href="Products.html" class="hover:text-white transition">Products</a>
+        <a href="Careers.html" class="text-white transition">Careers</a>
+        <a href="Contact.html" class="hover:text-white transition">Contact</a>
+      </div>
+      
+      <!-- Call-to-Action Buttons (Desktop) -->
+      <div class="hidden md:flex items-center gap-3">
+        <button class="px-5 py-2.5 rounded-xl border border-neutral-800 hover:border-neutral-700 hover:bg-neutral-900 transition text-sm">
+          <a href="Login.html">Sign in</a>
+        </button>
+        <button class="px-5 py-2.5 rounded-xl bg-white text-black hover:opacity-90 transition text-sm font-medium">
+          <a href="SignUp.html">Get Started</a>
+        </button>
+      </div>
+      
+      <!-- Hamburger Menu Button (Mobile) -->
+      <button id="menuBtn" class="md:hidden border border-neutral-800 rounded-xl p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/>
+        </svg>
+      </button>
+      
+    </div>
+    
+    <!-- The Mobile Menu Panel -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-neutral-900 bg-neutral-950">
+      <div class="w-[92%] mx-auto py-6 flex flex-col gap-6 text-neutral-400 text-sm">
+        <a href="Main.html" class="hover:text-white transition">Home</a>
+        <a href="About.html" class="hover:text-white transition">About</a>
+        <a href="Services.html" class="hover:text-white transition">Services</a>
+        <a href="Products.html" class="hover:text-white transition">Products</a>
+        <a href="Careers.html" class="text-white transition">Careers</a>
+        <a href="Contact.html" class="hover:text-white transition">Contact</a>
+        <div class="flex flex-col gap-3 pt-4">
+          <button class="w-full border border-neutral-800 py-3 rounded-xl">
+            <a href="Login.html">Sign in</a>
+          </button>
+          <button class="w-full bg-white text-black py-3 rounded-xl font-medium">
+            <a href="SignUp.html">Get Started</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 
+    ======================================
+    HERO SECTION 
+    ======================================
+    Header for the Careers page introducing the team culture.
+  -->
+  <section class="pt-40 pb-20 ">
+    <div class="w-[92%] max-w-7xl mx-auto">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 border border-neutral-800 rounded-full px-4 py-2 text-xs sm:text-sm text-neutral-400 mb-8">
+          <span class="w-2 h-2 rounded-full bg-white"></span>
+          Join Our Team
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-medium leading-[1.05] tracking-tight mb-8">
+          We're looking for world-class talent.
+        </h1>
+        <p class="text-lg sm:text-xl text-neutral-500 leading-relaxed">
+          At DIS Innovation, we believe that the best products are built by people who are passionate, curious, and driven by a desire to make an impact.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 
+    ======================================
+    WHY JOIN US SECTION
+    ======================================
+    Highlights company benefits and perks with a grid of cards next to an office culture image.
+  -->
+  <section class="py-24">
+    <div class="w-[92%] max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        
+        <!-- Left Side: Text and Perks Grid -->
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-medium mb-6">Why work at DIS Innovation?</h2>
+          <p class="text-neutral-500 text-lg leading-relaxed mb-8">
+            We've created a culture that values autonomy, creativity, and constant learning. Whether you're an engineer, designer, or strategist, you'll have the space to do your best work.
+          </p>
+          
+          <!-- 2-Column Grid for Perks -->
+          <div class="grid sm:grid-cols-2 gap-6">
+            
+            <div class="p-6 border border-neutral-900 rounded-2xl bg-neutral-900/10">
+              <i data-lucide="monitor" class="w-6 h-6 text-white mb-4"></i>
+              <h3 class="font-medium mb-2">Remote-First</h3>
+              <p class="text-sm text-neutral-500">Work from anywhere in the world with a flexible schedule.</p>
+            </div>
+            
+            <div class="p-6 border border-neutral-900 rounded-2xl bg-neutral-900/10">
+              <i data-lucide="book-open" class="w-6 h-6 text-white mb-4"></i>
+              <h3 class="font-medium mb-2">L&D Budget</h3>
+              <p class="text-sm text-neutral-500">We invest in your growth through courses, books, and conferences.</p>
+            </div>
+            
+            <div class="p-6 border border-neutral-900 rounded-2xl bg-neutral-900/10">
+              <i data-lucide="heart" class="w-6 h-6 text-white mb-4"></i>
+              <h3 class="font-medium mb-2">Health & Wellness</h3>
+              <p class="text-sm text-neutral-500">Comprehensive health insurance and wellness stipends.</p>
+            </div>
+            
+            <div class="p-6 border border-neutral-900 rounded-2xl bg-neutral-900/10">
+              <i data-lucide="terminal" class="w-6 h-6 text-white mb-4"></i>
+              <h3 class="font-medium mb-2">Modern Stack</h3>
+              <p class="text-sm text-neutral-500">Work with the latest technologies and high-end equipment.</p>
+            </div>
+            
+          </div>
+        </div>
+        
+        <!-- Right Side: Office Culture Image -->
+        <div>
+          <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=2070&auto=format&fit=crop" alt="Office Culture" class="rounded-[32px] h-[600px] w-full object-cover border border-neutral-900 shadow-2xl">
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- 
+    ======================================
+    OPEN POSITIONS SECTION
+    ======================================
+    A list of currently available jobs. Uses a clean, clickable card layout.
+  -->
+  <section id="openings" class="py-24 ">
+    <div class="w-[92%] max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-medium tracking-tight mb-4">Open Positions</h2>
+          <p class="text-neutral-500">Help us build the next generation of digital products.</p>
+        </div>
+        <div class="flex gap-4">
+          <span class="px-4 py-2 border border-neutral-800 rounded-full text-xs font-medium uppercase tracking-wider text-neutral-500">All Jobs (12)</span>
+        </div>
+      </div>
+
+      <!-- Job Listings -->
+      <div class="space-y-4">
+        
+        <!-- Job 1: A group hover effect ('group') makes the text translate slightly when hovered -->
+        <a href="#" class="group block p-8 border border-neutral-800 rounded-[24px] hover:border-neutral-500 transition bg-neutral-950">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div>
+              <h3 class="text-xl font-medium mb-1 group-hover:translate-x-2 transition duration-300">Senior Full-Stack Engineer</h3>
+              <p class="text-neutral-500 text-sm">Engineering · Remote · Full-time</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-sm font-medium text-neutral-500">Apply Now</span>
+              <i data-lucide="arrow-right" class="w-5 h-5 text-neutral-500 group-hover:text-white transition"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- Job 2 -->
+        <a href="#" class="group block p-8 border border-neutral-800 rounded-[24px] hover:border-neutral-500 transition bg-neutral-950">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div>
+              <h3 class="text-xl font-medium mb-1 group-hover:translate-x-2 transition duration-300">Lead Product Designer (UI/UX)</h3>
+              <p class="text-neutral-500 text-sm">Design · London/Hybrid · Full-time</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-sm font-medium text-neutral-500">Apply Now</span>
+              <i data-lucide="arrow-right" class="w-5 h-5 text-neutral-500 group-hover:text-white transition"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- Job 3 -->
+        <a href="#" class="group block p-8 border border-neutral-800 rounded-[24px] hover:border-neutral-500 transition bg-neutral-950">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div>
+              <h3 class="text-xl font-medium mb-1 group-hover:translate-x-2 transition duration-300">AI/ML Research Scientist</h3>
+              <p class="text-neutral-500 text-sm">AI · San Francisco/Remote · Full-time</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-sm font-medium text-neutral-500">Apply Now</span>
+              <i data-lucide="arrow-right" class="w-5 h-5 text-neutral-500 group-hover:text-white transition"></i>
+            </div>
+          </div>
+        </a>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- 
+    ======================================
+    CALL TO ACTION (CTA) SECTION
+    ======================================
+  -->
+  <section class="py-24">
+    <div class="w-[92%] max-w-7xl mx-auto text-center">
+      <h2 class="text-3xl font-medium mb-6">Don't see a role for you?</h2>
+      <p class="text-neutral-500 max-w-xl mx-auto mb-10">
+        We're always looking for exceptional people. Send us an open application and tell us how you can contribute to DIS Innovation.
+      </p>
+      <button class="border border-neutral-800 hover:border-neutral-500 px-8 py-4 rounded-2xl font-medium transition">
+        Send Open Application
+      </button>
+    </div>
+  </section>
+
+  <!-- 
+    ======================================
+    FOOTER SECTION
+    ======================================
+    Standard bottom area with copyright info and legal links.
+  -->
+  <footer class="border-t border-neutral-900 py-10">
+    <div class="w-[92%] max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+      
+      <div class="flex items-center gap-3">
+        <img src="/imgs/image.png" alt="logo" class="w-8 h-8">
+        <span class="font-medium">DIS Innovation</span>
+      </div>
+      
+      <p class="text-sm text-neutral-500 text-center">© 2026 DIS Innovation LTD. All rights reserved.</p>
+      
+      <div class="flex items-center gap-6 text-sm text-neutral-500">
+        <a href="#" class="hover:text-white transition">Privacy</a>
+        <a href="#" class="hover:text-white transition">Terms</a>
+        <a href="#" class="hover:text-white transition">Support</a>
+      </div>
+      
+    </div>
+  </footer>
+
+  <!-- 
+    ======================================
+    JAVASCRIPT CODE
+    ======================================
+  -->
+  <script>
+    // Tells the Lucide library to find any <i data-lucide="..."> tags and render SVG icons
+    lucide.createIcons();
+    
+    // Grab the hamburger menu button and the actual mobile menu panel
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    
+    // Toggle the 'hidden' class when the menu button is clicked
+    menuBtn.addEventListener("click", () => { 
+      mobileMenu.classList.toggle("hidden"); 
+    });
+  </script>
+</body>
+</html>

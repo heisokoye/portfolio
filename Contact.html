@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Ensures the website scales correctly on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Contact Us | DIS Innovation LTD</title>
+  
+  <!-- Pulling in Tailwind CSS for rapid styling without writing custom CSS classes -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- We're loading Material Icons for classic Google-style icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <!-- Lucide is loaded here for sleek, modern outline icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- This pulls in Apple's San Francisco Pro font for that premium iOS/macOS look -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sahibjotsaggu/San-Francisco-Pro-Fonts@master/fonts.css" />
+  
+  <style>
+    /* Applying the SF Pro font to everything on the page */
+    *{ font-family: "SF Pro Display", sans-serif; }
+    
+    /* Gives a smooth gliding effect when clicking anchor links that jump down the page */
+    html{ scroll-behavior:smooth; }
+    
+    /* Prevents annoying horizontal scrolling if an element accidentally pushes past the screen width */
+    body{ overflow-x:hidden; }
+    
+    /* Custom rule to give input fields a white border when focused instead of default browser outlines */
+    input:focus, textarea:focus, select:focus{
+      outline: none;
+      border-color: #ffffff !important;
+    }
+  </style>
+</head>
+
+<!-- We start with a very dark background (neutral-950) and white text for a slick dark-mode feel. -->
+<body class="bg-neutral-950 text-white antialiased">
+
+  <!-- 
+    ======================================
+    THE NAVIGATION BAR 
+    ======================================
+    We make it stick to the top ('fixed top-0'), add a dark transparent background ('bg-neutral-950/90'), 
+    and a nice frosted glass effect ('backdrop-blur-xl') so content beautifully blurs as it scrolls underneath.
+  -->
+  <nav class="fixed top-0 left-0 w-full z-50 border-b border-neutral-900 bg-neutral-950/90 backdrop-blur-xl">
+    <div class="mx-auto h-20 px-4 flex items-center justify-between">
+      
+      <!-- Brand Logo & Name: Clicking this always takes you back home -->
+      <a href="Main.html" class="flex items-center gap-3 cursor-pointer">
+        <img src="/imgs/image.png" alt="DIS Logo" class="w-8 h-8 object-contain">
+        <h2 class="text-sm md:text-base tracking-tight font-medium">DIS Innovation</h2>
+      </a>
+      
+      <!-- 
+        Desktop Navigation Links 
+        These are hidden on small mobile screens ('hidden') and only show up on larger screens ('lg:flex'). 
+      -->
+      <div class="hidden lg:flex items-center gap-8 text-sm text-neutral-500">
+        <a href="Main.html" class="hover:text-white transition">Home</a>
+        <a href="About.html" class="hover:text-white transition">About</a>
+        <a href="Services.html" class="hover:text-white transition">Services</a>
+        <a href="Products.html" class="hover:text-white transition">Products</a>
+        <a href="Careers.html" class="hover:text-white transition">Careers</a>
+        <a href="Contact.html" class="text-white transition">Contact</a>
+      </div>
+      
+      <!-- Call-to-Action Buttons (Desktop) -->
+      <div class="hidden md:flex items-center gap-3">
+        <button class="px-5 py-2.5 rounded-xl border border-neutral-800 hover:border-neutral-700 hover:bg-neutral-900 transition text-sm">
+          <a href="Login.html">Sign in</a>
+        </button>
+        <button class="px-5 py-2.5 rounded-xl bg-white text-black hover:opacity-90 transition text-sm font-medium">
+          <a href="SignUp.html">Get Started</a>
+        </button>
+      </div>
+      
+      <!-- Hamburger Menu Button (Mobile) -->
+      <button id="menuBtn" class="md:hidden border border-neutral-800 rounded-xl p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/>
+        </svg>
+      </button>
+      
+    </div>
+    
+    <!-- The Mobile Menu Panel -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-neutral-900 bg-neutral-950">
+      <div class="w-[92%] mx-auto py-6 flex flex-col gap-6 text-neutral-400 text-sm">
+        <a href="Main.html" class="hover:text-white transition">Home</a>
+        <a href="About.html" class="hover:text-white transition">About</a>
+        <a href="Services.html" class="hover:text-white transition">Services</a>
+        <a href="Products.html" class="hover:text-white transition">Products</a>
+        <a href="Careers.html" class="hover:text-white transition">Careers</a>
+        <a href="Contact.html" class="text-white transition">Contact</a>
+        <div class="flex flex-col gap-3 pt-4">
+          <button class="w-full border border-neutral-800 py-3 rounded-xl">
+            <a href="Login.html">Sign in</a>
+          </button>
+          <button class="w-full bg-white text-black py-3 rounded-xl font-medium">
+            <a href="SignUp.html">Get Started</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 
+    ======================================
+    HERO SECTION 
+    ======================================
+    Header for the Contact page.
+  -->
+  <section class="pt-40 pb-20 border-b border-neutral-900">
+    <div class="w-[92%] max-w-7xl mx-auto">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 border border-neutral-800 rounded-full px-4 py-2 text-xs sm:text-sm text-neutral-400 mb-8">
+          <span class="w-2 h-2 rounded-full bg-white"></span>
+          Contact
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-medium leading-[1.05] tracking-tight mb-8">
+          Let's build something exceptional.
+        </h1>
+        <p class="text-lg sm:text-xl text-neutral-500 leading-relaxed">
+          Have a project in mind or want to learn more about our services? We'd love to hear from you.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 
+    ======================================
+    CONTACT FORM & INFO SECTION
+    ======================================
+    Split layout with contact details/map on the left, and a contact form on the right.
+  -->
+  <section class="py-24">
+    <div class="w-[92%] max-w-7xl mx-auto grid lg:grid-cols-2 gap-20">
+      
+      <!-- LEFT SIDE: Contact Information and Map -->
+      <div class="space-y-12">
+        
+        <!-- Contact Details -->
+        <div>
+          <h2 class="text-2xl font-medium mb-6">Contact Information</h2>
+          <div class="space-y-6">
+            
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-neutral-900 flex items-center justify-center shrink-0">
+                <i data-lucide="mail" class="w-5 h-5 text-white"></i>
+              </div>
+              <div>
+                <p class="text-sm text-neutral-500 mb-1">Email us at</p>
+                <a href="mailto:hello@disinnovation.com" class="text-lg hover:text-neutral-400 transition">hello@disinnovation.com</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-neutral-900 flex items-center justify-center shrink-0">
+                <i data-lucide="phone" class="w-5 h-5 text-white"></i>
+              </div>
+              <div>
+                <p class="text-sm text-neutral-500 mb-1">Call us</p>
+                <a href="tel:+1234567890" class="text-lg hover:text-neutral-400 transition">+1 (234) 567-890</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-neutral-900 flex items-center justify-center shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5 text-white"></i>
+              </div>
+              <div>
+                <p class="text-sm text-neutral-500 mb-1">Visit us</p>
+                <p class="text-lg">123 Innovation Way, Tech District, London, UK</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Social Media Links -->
+        <div>
+          <h2 class="text-2xl font-medium mb-6">Follow us</h2>
+          <div class="flex gap-4">
+            <a href="#" class="w-12 h-12 rounded-xl border border-neutral-900 flex items-center justify-center hover:bg-neutral-900 transition">
+              <i data-lucide="twitter" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="w-12 h-12 rounded-xl border border-neutral-900 flex items-center justify-center hover:bg-neutral-900 transition">
+              <i data-lucide="linkedin" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="w-12 h-12 rounded-xl border border-neutral-900 flex items-center justify-center hover:bg-neutral-900 transition">
+              <i data-lucide="instagram" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="w-12 h-12 rounded-xl border border-neutral-900 flex items-center justify-center hover:bg-neutral-900 transition">
+              <i data-lucide="github" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Map Image Box (with a grayscale filter to match the dark theme) -->
+        <div class="rounded-[32px] overflow-hidden border border-neutral-900 grayscale">
+          <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=1974&auto=format&fit=crop" alt="Map Placeholder" class="w-full h-64 object-cover">
+        </div>
+        
+      </div>
+
+      <!-- RIGHT SIDE: The Contact Form -->
+      <div class="bg-neutral-900/10 h-100 border border-neutral-900 rounded-[32px] p-8 sm:p-12">
+        <form class="space-y-6">
+          
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label class="text-sm text-neutral-500">First Name</label>
+              <!-- Inputs are styled with a dark background and lighten on focus (due to custom CSS in <head>) -->
+              <input type="text" placeholder="John" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-white transition">
+            </div>
+            <div class="space-y-2">
+              <label class="text-sm text-neutral-500">Last Name</label>
+              <input type="text" placeholder="Doe" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-white transition">
+            </div>
+          </div>
+          
+          <div class="space-y-2">
+            <label class="text-sm text-neutral-500">Email Address</label>
+            <input type="email" placeholder="john@example.com" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-white transition">
+          </div>
+          
+          <!-- Dropdown Select -->
+          <div class="space-y-2">
+            <label class="text-sm text-neutral-500">Interested in</label>
+            <select class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-white transition appearance-none">
+              <option>Web Development</option>
+              <option>UI/UX Design</option>
+              <option>AI Integration</option>
+              <option>Other</option>
+            </select>
+          </div>
+          
+          <div class="space-y-2">
+            <label class="text-sm text-neutral-500">Message</label>
+            <!-- A multiline textarea that cannot be resized by the user ('resize-none') -->
+            <textarea rows="5" placeholder="Tell us about your project..." class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-white transition resize-none"></textarea>
+          </div>
+          
+          <!-- Submit Button -->
+          <button class="w-full bg-white text-black py-4 rounded-xl font-medium hover:opacity-90 transition">
+            Send Message
+          </button>
+          
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 
+    ======================================
+    FOOTER SECTION
+    ======================================
+    Standard bottom area with copyright info and legal links.
+  -->
+  <footer class="border-t border-neutral-900 py-10">
+    <div class="w-[92%] max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+      
+      <div class="flex items-center gap-3">
+        <img src="/imgs/image.png" alt="logo" class="w-8 h-8">
+        <span class="font-medium">DIS Innovation</span>
+      </div>
+      
+      <p class="text-sm text-neutral-500 text-center">© 2026 DIS Innovation LTD. All rights reserved.</p>
+      
+      <div class="flex items-center gap-6 text-sm text-neutral-500">
+        <a href="#" class="hover:text-white transition">Privacy</a>
+        <a href="#" class="hover:text-white transition">Terms</a>
+        <a href="#" class="hover:text-white transition">Support</a>
+      </div>
+      
+    </div>
+  </footer>
+
+  <!-- 
+    ======================================
+    JAVASCRIPT CODE
+    ======================================
+  -->
+  <script>
+    // Tells the Lucide library to find any <i data-lucide="..."> tags and render SVG icons
+    lucide.createIcons();
+    
+    // Grab the hamburger menu button and the actual mobile menu panel
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    
+    // Toggle the 'hidden' class when the menu button is clicked
+    menuBtn.addEventListener("click", () => { 
+      mobileMenu.classList.toggle("hidden"); 
+    });
+  </script>
+</body>
+</html>
