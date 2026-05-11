@@ -34,11 +34,11 @@ Using semantic tags is important because it helps screen readers (accessibility 
 
 If you are completely new to this project, here is the easiest way to understand how the DIS Innovation LTD website is built. Think of building this website exactly like building a house:
 
-* **HTML (The Structure):** This is the foundation and the walls. If you look at files like `Main.html` or `About.html`, you are looking at the raw structure of the site. It tells the browser exactly what the content is: "This is the navigation bar," "This is a hero heading," or "These are the service cards."
+* **HTML (The Structure):** This is the foundation and the walls. If you look at files like `index.html` or `About.html`, you are looking at the raw structure of the site. It tells the browser exactly what the content is: "This is the navigation bar," "This is a hero heading," or "These are the service cards."
 * **Tailwind CSS (The Styling):** This is the interior design and paint. Instead of having a separate complex CSS file, we use Tailwind classes directly inside the HTML (like `bg-neutral-950` for a dark background or `text-center` to center text). This is what gives the website its premium, modern dark-mode aesthetic.
 * **JavaScript (The Functionality):** This is what makes the site active and alive. We use just a tiny bit of JavaScript at the bottom of our files to do simple interactive things, like making the mobile hamburger menu open and close when clicked, and to instantly draw our custom icons.
 
-Overall, the website is made up of individual, static HTML pages (`Main.html`, `About.html`, `Services.html`, `Products.html`, `Careers.html`, `Contact.html`) that link to one another, making it incredibly straightforward to read, edit, and navigate!
+Overall, the website is made up of individual, static HTML pages (`index.html`, `About.html`, `Services.html`, `Products.html`, `Careers.html`, `Contact.html`) that link to one another, making it incredibly straightforward to read, edit, and navigate!
 
 ---
 
@@ -74,7 +74,7 @@ While this project is built using plain, static HTML and Tailwind CSS—which is
 Here are the major advantages React has over "normal" HTML:
 
 ### 1. Reusable Components (No More Copy-Pasting)
-In this static HTML project, if we want to change a link in the Navigation Bar, we have to manually open and edit `Main.html`, `About.html`, `Services.html`, and every other page. 
+In this static HTML project, if we want to change a link in the Navigation Bar, we have to manually open and edit `index.html`, `About.html`, `Services.html`, and every other page. 
 With React, you build a `<Navbar />` component *once* and reuse it. If you change it in one place, it instantly updates across the entire website.
 
 ### 2. Lightning Fast "App-like" Navigation
